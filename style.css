@@ -1,0 +1,250 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* 
+:root是一个伪类，表示文档根元素，非IE及ie8及以上浏览器都支持，
+在:root中声明相当于全局属性，只要当前页面引用了:root segment所在文件，
+都可以使用var()来引用
+*/
+:root {
+  --mood-color-1: blue;
+  --mood-color-2: Indigo;
+  --mood-color-3: pink;
+  --mood-color-4: red;
+  --mood-color-5: black;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 40px;
+}
+h2 {
+  margin-bottom: 0;
+}
+h4 {
+  font-weight: 100px;
+  /* 上边距5px 左右边距0 下边距20px */
+  margin: 5px 0 20px;
+}
+p {
+  /* 上下边距5px 左右边距0 */
+  margin: 5px 0;
+}
+/* 主体位置 */
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 30px;
+  text-align: center;
+}
+/* ------------------------------心情图标样式------------------------------ */
+.moods_container {
+  /* 弹性布局 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mood {
+  background-color: #ffff;
+  /* 隐藏边框 */
+  border: 0;
+  border-radius: 50%;
+  color: #000;
+  /* 弹性布局 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  /* 元素间纵向排列 */
+  flex-direction: column;
+  /* 元素字体大小，因为图标用i标签框着，所以会随字体大小改变大小 */
+  font-size: 40px;
+  text-align: center;
+  line-height: 10px;
+  padding: 0;
+  margin: 0 10px;
+  height: 60px;
+  width: 60px;
+}
+.mood i {
+  border-radius: 50%;
+}
+.mood p {
+  margin: 5px 0 0 0;
+  padding: 0;
+  font-size: 12px;
+}
+/* css独立样式 :root */
+.mood_1 {
+  color: var(--mood-color-1);
+}
+.mood_2 {
+  color: var(--mood-color-2);
+}
+.mood_3 {
+  color: var(--mood-color-3);
+}
+.mood_4 {
+  color: var(--mood-color-4);
+}
+
+.mood_5 {
+  color: var(--mood-color-5);
+}
+
+/* 清除选中时图标的外边框 */
+.mood:focus {
+  outline: 0;
+}
+
+.mood:active {
+  /* 点击时缩放效果 */
+  transform: scale(0.8);
+}
+
+/* 点击时添加背景颜色 */
+.mood.selected {
+  /* currentColor  当前颜色 当前选中的设置颜色是什么就时什么颜色 */
+  background-color: currentColor;
+}
+/* 点击时修改图标颜色 */
+.mood.selected i {
+  color: #ffff;
+}
+/* 点击时修改p标签字体颜色 */
+.mood.selected p {
+  color: #ffff;
+}
+
+/* ----------------------------随机和清除按钮的设置-------------------- */
+.action_btn {
+  /* 圆角设置 左上角10px 右上角0 右下角0 左下角10px */
+  border-radius: 10px 0 0 10px;
+  color: #ffff;
+  font-size: 25px;
+  padding: 8px 20px;
+  margin: 0;
+  position: fixed;
+  top: 10%;
+  /* 隐藏按钮 */
+  right: -69px;
+  /* 通过::hover来利用transtion来在0.5s内改变right值,做到滑动效果 */
+  transition-property: right;
+  transition-duration: 0.5s;
+}
+
+.randomize {
+  background-color: darkcyan;
+}
+/* 通过defore来做出提示标签 */
+.randomize::before {
+  content: "随机";
+  position: absolute;
+  border-radius: 10px 0 0 10px;
+  color: black;
+  width: 50px;
+  height: 30px;
+  right: 65px;
+  top: 6px;
+  font-size: 20px;
+  background: darkcyan;
+}
+.clear {
+  background-color: darkcyan;
+  top: 20%;
+  padding: 8px 21px;
+}
+.clear::before {
+  content: "清空";
+  position: absolute;
+  border-radius: 10px 0 0 10px;
+  color: black;
+  width: 50px;
+  height: 30px;
+  right: 65px;
+  top: 6px;
+  font-size: 20px;
+  background: darkcyan;
+}
+/* 设置随机和清除按钮的点击和聚焦时的效果 */
+.action_btn:active {
+  transform: scale(0.9);
+}
+.action_btn:focus {
+  outline: none;
+}
+.action_btn:hover {
+  right: 0px;
+}
+
+/* -----------------------------日历日期样式-------------------------- */
+.calendar {
+  display: flex;
+  /* 自动换行 */
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+/* 月份样式 */
+.months {
+  padding: 10px;
+  /* 宽度设置为33%是为了让每个月占三分之一，每行只放三个月份 */
+  width: 33%;
+  /* 本来不设置高度的,但是5月和8月回高出30px所以就设置死高度了 */
+  height: 243px;
+}
+.months h3 {
+  margin: 5px 0;
+}
+/* 设置星期 日期的主体位置 */
+.week_days_container,
+.days_container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.week_days,
+.days {
+  font-size: 13px;
+  margin-bottom: 5px;
+  /* calc计算函数 */
+  /* 它们父类的宽度的100%/7 分成七份 */
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+  text-align: center;
+}
+/* 把日期的字体放大些，方便看 */
+.days {
+  font-size: 20px;
+}
+.days .circle {
+  background-color: #888;
+  border-radius: 50%;
+  color: #ffff;
+  /* 鼠标移入时鼠标变成手的样子 */
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  /* 要加上弹性布局，否则宽高没有效果，只会是span的内容宽高 */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.days .circle:hover {
+  transform: scale(1.1);
+}
+
+/* 媒体查询 */
+/* 当宽度<=756px时，将months的宽度设置为50%，代替原来的33% */
+/* 也就是每行只显示两个月份 */
+@media (max-width: 756px) {
+  .months {
+    width: 50%;
+  }
+}
+/* 当宽度<=480px时，将months的宽度设置为100%，代替原来的33% */
+/* 也就是每行只显示1个月份 */
+@media (max-width: 480px) {
+  .months {
+    width: 100%;
+  }
+}
