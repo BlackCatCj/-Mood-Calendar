@@ -75,6 +75,7 @@ p {
   font-size: 12px;
 }
 /* css独立样式 :root */
+/* 通过var()来调用 */
 .mood_1 {
   color: var(--mood-color-1);
 }
