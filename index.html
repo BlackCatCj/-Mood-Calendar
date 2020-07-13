@@ -1,58 +1,57 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>心情日历</title>
-    <link rel="stylesheet" href="style.css" />
-    <!-- 引入font awesome图标库 -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css"
-    />
-  </head>
-  <body>
-    <div class="container">
-      <h2>心情日历</h2>
-      <h4>~请点击下方图标选择你的每日心情~</h4>
-      <p>选择心情图标</p>
-      <!-- 心情图标 -->
-      <div class="moods_container">
-        <button class="mood mood_1" id="mood_1">
-          <i class="fa fa-smile-o" aria-hidden="true"></i>
-          <p>开心</p>
-        </button>
-        <button class="mood mood_2" id="mood_2">
-          <i class="fa fa-meh-o" aria-hidden="true"></i>
-          <p>平淡</p>
-        </button>
-        <button class="mood mood_3" id="mood_3">
-          <i class="fa fa-heart" aria-hidden="true"></i>
-          <p>激动</p>
-        </button>
-        <button class="mood mood_4" id="mood_4">
-          <i class="fa fa-fire" aria-hidden="true"></i>
-          <p>生气</p>
-        </button>
-        <button class="mood mood_5" id="mood_5">
-          <i class="fa fa-frown-o" aria-hidden="true"></i>
-          <p>难过</p>
-        </button>
-      </div>
-      <p>然后点击下方对应日期</p>
-      <!-- 随机填充心情和清空按钮 -->
-      <button class="action_btn randomize" id="randomize">
-        <!-- <div class="flag">随机心情</div> -->
-        <i class="fa fa-random" aria-hidden="true"></i>
-      </button>
-      <button class="action_btn clear" id="clear">
-        <!-- <div class="flag">清空心情</div> -->
-        <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
-      </button>
 
-      <!-- 日历部分 -->
-      <div class="calendar" id="calendar">
-        <!-- 
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>心情日历</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- 引入font awesome图标库 -->
+  <link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h2>心情日历</h2>
+    <h4>~请点击下方图标选择你的每日心情~</h4>
+    <p>选择心情图标</p>
+    <!-- ----------------------心情图标 --------------------------------->
+    <div class="moods_container">
+      <button class="mood mood_1" id="mood_1">
+        <i class="fa fa-smile-o" aria-hidden="true"></i>
+        <p>开心</p>
+      </button>
+      <button class="mood mood_2" id="mood_2">
+        <i class="fa fa-meh-o" aria-hidden="true"></i>
+        <p>平淡</p>
+      </button>
+      <button class="mood mood_3" id="mood_3">
+        <i class="fa fa-heart" aria-hidden="true"></i>
+        <p>激动</p>
+      </button>
+      <button class="mood mood_4" id="mood_4">
+        <i class="fa fa-fire" aria-hidden="true"></i>
+        <p>生气</p>
+      </button>
+      <button class="mood mood_5" id="mood_5">
+        <i class="fa fa-frown-o" aria-hidden="true"></i>
+        <p>难过</p>
+      </button>
+    </div>
+    <p>然后点击下方对应日期</p>
+    <!-- 随机填充心情和清空按钮 -->
+    <button class="action_btn randomize" id="randomize">
+      <!-- <div class="flag">随机心情</div> -->
+      <i class="fa fa-random" aria-hidden="true"></i>
+    </button>
+    <button class="action_btn clear" id="clear">
+      <!-- <div class="flag">清空心情</div> -->
+      <i class="fa fa-refresh fa-spin" aria-hidden="true"></i>
+    </button>
+
+    <!-- -----------------------日历部分 ---------------->
+    <div class="calendar" id="calendar">
+      <!-- 
         这部分代码用于进行js插入之前的样式设置与调整
         1月份
         <div class="months month_0">
@@ -139,8 +138,9 @@
             </div>
           </div>
         </div> -->
-      </div>
     </div>
-    <script src="main.js"></script>
-  </body>
+  </div>
+  <script src="main.js"></script>
+</body>
+
 </html>
