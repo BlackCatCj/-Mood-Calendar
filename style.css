@@ -86,7 +86,15 @@ p {
     margin: 0 3px;
   }
 }
-
+@media(max-width:450px){
+  .mood{
+    font-size: 10px;
+    height:30px;
+    width: 30px;
+    line-height: 5px;
+    margin: 0 3px;
+  }
+}
 /* css独立样式 :root */
 /* 通过var()来调用 */
 /* 不止可以用于设置颜色方面，是不是可以用于背景图片？ */
