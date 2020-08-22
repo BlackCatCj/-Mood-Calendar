@@ -13,7 +13,7 @@
   --mood-color-2: Indigo;
   --mood-color-3: pink;
   --mood-color-4: red;
-  --mood-color-5: black;
+  --mood-color-5: #CDAA7D;
 }
 body {
   font-family: Arial, Helvetica, sans-serif;
@@ -50,7 +50,7 @@ p {
   /* 隐藏边框 */
   border: 0;
   border-radius: 50%;
-  color: #000;
+  /* color: #000; */
   /* 弹性布局 */
   display: inline-flex;
   justify-content: center;
@@ -79,11 +79,11 @@ p {
 
 @media(max-width:500px){
   .mood{
-    font-size: 14px;
-    height:35px;
-    width: 35px;
+    font-size: 12px;
+    height:38px;
+    width: 38px;
     line-height: 5px;
-    margin: 0 5px;
+    margin: 0 3px;
   }
 }
 
@@ -122,13 +122,13 @@ p {
   /* currentColor  当前颜色 当前选中的设置颜色是什么就时什么颜色 */
   background-color: currentColor;
 }
-/* 点击时修改图标颜色 */
+/* 点击心情图标时修改图标颜色 */
 .mood.selected i {
-  color: #ffff;
+  color: 	#FFA500;
 }
-/* 点击时修改p标签字体颜色 */
+/* 点击心情图标时修改p标签字体颜色 */
 .mood.selected p {
-  color: #ffff;
+  color: 	#FFA500;
 }
 
 /* ----------------------------随机和清除按钮的设置-------------------- */
