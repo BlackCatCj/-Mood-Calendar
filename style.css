@@ -56,6 +56,7 @@ p {
   justify-content: center;
   align-items: center;
   /* 元素间纵向排列 */
+  /* 让文字和图标上下排列 */
   flex-direction: column;
   /* 元素字体大小，因为图标用i标签框着，所以会随字体大小改变大小 */
   font-size: 40px;
@@ -66,6 +67,7 @@ p {
   height: 60px;
   width: 60px;
 }
+
 .mood i {
   border-radius: 50%;
 }
@@ -74,6 +76,17 @@ p {
   padding: 0;
   font-size: 12px;
 }
+
+@media(max-width:500px){
+  .mood{
+    font-size: 14px;
+    height:35px;
+    width: 35px;
+    line-height: 5px;
+    margin: 0 5px;
+  }
+}
+
 /* css独立样式 :root */
 /* 通过var()来调用 */
 /* 不止可以用于设置颜色方面，是不是可以用于背景图片？ */
@@ -168,6 +181,9 @@ p {
   font-size: 20px;
   background: darkcyan;
 }
+
+
+
 /* 设置随机和清除按钮的点击和聚焦时的效果 */
 .action_btn:active {
   transform: scale(0.9);
@@ -214,6 +230,27 @@ p {
   height: calc(100% / 7);
   text-align: center;
 }
+@media(max-width:1100px){
+  .week_days{
+    font-size: 12px;
+  }
+}
+@media(max-width:1000px){
+  .week_days{
+    font-size: 10px;
+  }
+}
+@media(max-width:880px){
+  .week_days{
+    font-size: 8px;
+  }
+}
+@media(max-width:400px){
+  .week_days{
+    font-size: 6px;
+  }
+}
+
 /* 把日期的字体放大些，方便看 */
 .days {
   font-size: 20px;
